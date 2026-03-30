@@ -1,15 +1,12 @@
 package com.bookmystay.app;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Stores confirmed booking history.
- *
- * @author Divya
- * @version 8.0
- */
-public class BookingHistory {
+public class BookingHistory implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private List<Reservation> history;
 
@@ -17,12 +14,10 @@ public class BookingHistory {
         history = new ArrayList<>();
     }
 
-    // add confirmed booking
-    public void addBooking(Reservation reservation) {
-        history.add(reservation);
+    public void addBooking(Reservation r) {
+        history.add(r);
     }
 
-    // get all bookings
     public List<Reservation> getAllBookings() {
         return history;
     }

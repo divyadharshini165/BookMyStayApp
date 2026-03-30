@@ -1,12 +1,10 @@
 package com.bookmystay.app;
 
-/**
- * Represents a guest booking request.
- *
- * @author Divya
- * @version 5.0
- */
-public class Reservation {
+import java.io.Serializable;
+
+public class Reservation implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private String guestName;
     private String roomType;
@@ -24,8 +22,8 @@ public class Reservation {
         return roomType;
     }
 
+    // ✅ ADD METHOD INSIDE CLASS
     public void displayRequest() {
-        System.out.println("Guest : " + guestName +
-                " | Requested Room : " + roomType);
+        System.out.println("Guest: " + guestName + " | Room: " + roomType);
     }
 }
